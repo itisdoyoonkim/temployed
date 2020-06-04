@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    view = @post.views + 1
+    views = @post.views + 1
     @post.update(views: views)
   end
 
@@ -61,6 +61,17 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :views, :body, :image)
+      params.require(:post).permit(
+        :title, 
+        :body, 
+        :image,
+        :job_duration,
+        :start_date,
+        :job_title,
+        :location,
+        :company_name,
+        :job_description,
+        :requirements
+        )
     end
 end

@@ -1,15 +1,23 @@
 
 <%= form_with model: post do |f| %>
-
   <div class="form-inputs">
+    <%= f.label :title, "Job title" %>
     <%= f.text_field :title, class: "form-control string" %>
 
-    <%= f.label :image, class: 'form-control' %>
-    <%= f.file_field :image %>
+    <%= f.label :job_duration %>
+    <%= f.text_field :job_duration, class: "form-control string" %>
+
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date, class: "form-control string" %>
+
+    <%= f.label :company_name %>
+    <%= f.text_field :company_name, class: "form-control string" %>
+
+    <%= f.label :job_description %>
     <%= f.rich_text_area :body %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, class: "btn btn-primary" %>
   </div>
 <% end %>
