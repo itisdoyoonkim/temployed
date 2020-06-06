@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="<%= root_path %>">TEMP JOB FINDER</a>
+  <a class="navbar-brand" href="<%= root_path %>">TEMPLOYED</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -8,6 +8,9 @@
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
         <a class="nav-link" href="<%= posts_path %>">BROWSE JOBS</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<%= all_users_path %>">BROWSE USERS</a>
       </li>
     </ul>
 
@@ -19,9 +22,8 @@
           More
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <div class="dropdown-item"><%= current_user.name.upcase %></div>
-          <a class="dropdown-item" href="<%= edit_user_registration_path %>">My account</a>
-          <a class="dropdown-item" href="#">Post a new job</a>
+          <a class="dropdown-item" href="<%= my_account_path %>">My account</a>
+          <a class="dropdown-item" href="<%= new_post_path %>">Post a new job</a>
           <div class="dropdown-divider"></div>
           <%= link_to "Sign out", destroy_user_session_path, class: "dropdown-item", method: :delete %>
         </div>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Institution:</strong>
+  <%= @education.institution %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @education.location %>
+</p>
+
+<p>
+  <strong>From:</strong>
+  <%= @education.from %>
+</p>
+
+<p>
+  <strong>To:</strong>
+  <%= @education.to %>
+</p>
+
+<p>
+  <strong>Certificate:</strong>
+  <%= @education.certificate %>
+</p>
+
+<p>
+  <strong>Current:</strong>
+  <%= @education.current %>
+</p>
+
+<%= link_to 'Edit', edit_education_path(@education) %> |
+<%= link_to 'Back', educations_path %>

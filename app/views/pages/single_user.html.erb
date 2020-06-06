@@ -1,0 +1,33 @@
+<section>
+<div class="card">
+  <div class="card-header">
+    <h4><%= @user.name %></h4>
+    <p><%= @user.email %></p>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">EXPERIENCE</h5>
+        <% @user.experiences.each do |experience| %>
+            <p class="card-text" style="margin-left: 9px">
+                <%= experience.organization %>
+                <%= experience.location %>
+            </p>
+            <hr>
+        <% end %>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">EDUCATION</h5>
+        <% @user.educations.each do |education| %>
+            
+            <p class="card-text" style="margin-left: 9px">
+                <%= education.institution %>, <%= education.location %>
+            </p>
+
+            <p class="card-text" style="margin-left: 9px">
+                <%= education.certificate %>
+            </p>
+            <hr>
+        <% end %>    
+  </div>
+</div>
+</section>
+

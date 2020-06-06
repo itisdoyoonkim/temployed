@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_04_031940) do
+ActiveRecord::Schema.define(version: 2020_06_06_212059) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,8 +46,32 @@ ActiveRecord::Schema.define(version: 2020_06_04_031940) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "educations", force: :cascade do |t|
+    t.string "institution"
+    t.string "location"
+    t.date "from"
+    t.date "to"
+    t.string "certificate"
+    t.boolean "current"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_educations_on_user_id"
+  end
+
+  create_table "experiences", force: :cascade do |t|
+    t.string "organization"
+    t.string "location"
+    t.string "position"
+    t.date "from"
+    t.date "to"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_experiences_on_user_id"
+  end
+
   create_table "posts", force: :cascade do |t|
-    t.string "title"
     t.integer "views", default: 0
     t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -72,10 +96,13 @@ ActiveRecord::Schema.define(version: 2020_06_04_031940) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "admin", default: false
     t.string "name"
+    t.text "headline"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "educations", "users"
+  add_foreign_key "experiences", "users"
   add_foreign_key "posts", "users"
 end

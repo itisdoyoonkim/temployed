@@ -1,0 +1,45 @@
+<h4>Hello, <%= current_user.name %></h4>
+
+<%= link_to 'Change password', edit_user_registration_path, class: "btn btn-warning btn-sm" %>
+
+<div class="card">
+  <div class="card-header">
+    EDUCATION
+    <%= link_to 'Add', new_education_path, class: "btn btn-primary btn-sm" %>
+  </div>
+  <div class="card-body">
+    <% @educations.each do |education| %>
+        <div><%= education.institution %>, <%= education.location %></div>
+        <div><%= education.certificate %></div>
+        <div>Start: <%= education.from %></div>
+        <div>End: <%= education.to %></div>
+    <%= link_to 'Edit', edit_education_path(education), class: "btn btn-warning btn-sm" %>
+    <%= link_to 'Remove', education, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    EXPERIENCE
+    <%= link_to 'Add new experience', new_experience_path, class: "btn btn-primary btn-sm" %>
+  </div>
+  <div class="card-body">
+    <% @experiences.each do |experience| %>
+        <div><%= experience.organization %>, <%= experience.location %></div>
+        <div><%= experience.position %></div>
+    <%= link_to 'Edit', edit_experience_path(experience), class: "btn btn-warning btn-sm" %>
+    <%= link_to 'Remove', experience, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header">
+    JOBS
+ </div>
+  <div class="card-body">
+    <h5>Created by me</h5>
+    <h5>Bookmarked by me</h5>
+  </div>
+</div>
