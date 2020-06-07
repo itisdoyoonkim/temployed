@@ -1,10 +1,19 @@
 <div class="card">
   <div class="card-body">
+    <div style="font-size: .9rem">
+      <%= @categories.find(@post.category_id).name %>
+    </div>
+
     <h5 class="card-title"><%= @post.job_title %></h5>
-    <h6 class="card-subtitle mb-2 text-muted"><%= @post.company_name %></h6>
+    <p class="card-subtitle mb-2 text-muted"><%= @post.company_name %> - <%= @post.location %></p>
+
+    <small>Start date: <%= @post.start_date %></small>
+
     <p class="card-text"><%= @post.body %></p>
-    <a href="#" class="card-link">Apply now</a>
-    <a href="#" class="card-link">Bookmark for later</a>
+
+    <button class="btn btn-primary btn-sm">Apply now</button>
+    <button class="btn btn-info btn-sm">Bookmark for later</button>
+
     <hr />
     <p>Updated <%= time_ago_in_words(@post.updated_at) %> ago</p>
   </div>

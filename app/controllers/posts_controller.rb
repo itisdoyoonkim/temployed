@@ -4,11 +4,13 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.order(created_at: :desc)
+    @categories = Category.all
   end
 
   def show
     views = @post.views + 1
     @post.update(views: views)
+    @categories = Category.all
   end
 
   def new
@@ -65,7 +67,8 @@ class PostsController < ApplicationController
         :location,
         :company_name,
         :job_description,
-        :requirements
+        :requirements,
+        :category_id
         )
     end
 end
