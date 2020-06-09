@@ -23,8 +23,8 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
-gem 'devise'
-gem 'simple_form'
+gem 'devise', '~> 4.2'
+gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'hirb'
 gem 'faker'
 
