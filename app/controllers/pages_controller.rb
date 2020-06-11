@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :authenticate_user!, except: [:about, :home]
+  before_action :authenticate_user!, except: [:about, :home, :not_found]
 
   def about
   end
@@ -10,6 +10,7 @@ class PagesController < ApplicationController
   def my_account
     @educations = current_user.educations
     @experiences = current_user.experiences
+    @user = User.find(current_user.id)
   end
 
  def all_users
@@ -18,5 +19,8 @@ class PagesController < ApplicationController
 
  def single_user
   @user = User.find(params[:id])
+ end
+
+ def not_found
  end
 end

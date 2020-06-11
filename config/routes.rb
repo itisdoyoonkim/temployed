@@ -7,9 +7,11 @@ Rails.application.routes.draw do
   get '/my_account', to: 'pages#my_account'
   get '/all_users', to: 'pages#all_users'
   get '/user/:id', to: 'pages#single_user', :as => :user
-
+  get '/not_found', to: 'pages#not_found'
+  
   devise_for :users
   
   root to: "posts#index"
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  
+  get '*path' => redirect('/not_found')
 end

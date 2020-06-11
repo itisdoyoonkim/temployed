@@ -68,7 +68,8 @@ class PostsController < ApplicationController
         :company_name,
         :job_description,
         :requirements,
-        :category_id
+        :category_id,
+        :apply_link
         )
     end
 end

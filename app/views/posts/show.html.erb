@@ -11,7 +11,12 @@
 
     <p class="card-text"><%= @post.body %></p>
 
-    <button class="btn btn-primary btn-sm">Apply now</button>
+    <% if @post.apply_link.present? %>
+      <%= link_to "Apply", "https://www.#{@post.apply_link}", class: "btn btn-primary btn-sm" %>
+    <% else %>
+      <%= mail_to @post.user.email, 'Apply', class: "btn btn-primary btn-sm" %>
+    <% end %>
+    
     <button class="btn btn-info btn-sm">Bookmark for later</button>
 
     <hr />
