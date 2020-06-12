@@ -24,9 +24,18 @@
           <h6><%= post.location %></h6>
 
           <div style="margin-top: 15px">
-            <small>Start date: </small>
-            <br />
-            <small>End date: </small>
+      <small>Dates (start - end): 
+    <% if post.start_date.present? %> 
+      <% if post.end_date.present? %>
+        <%= post.start_date %> - <%= post.end_date %>
+      <% else %>
+        <%= post.start_date %> - not specified
+      <% end %>
+    <% else %>
+      not specified
+    <% end %>
+    </small>
+
           </div>
 
           <div>

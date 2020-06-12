@@ -18,17 +18,22 @@
 
   <div class="form-group">
     <%= f.label :job_title, "Job title" %>
-    <%= f.text_field :job_title, class: "form-control", placeholder: "e.g. Purchasing Clerk - Maternity Leave" %>
+    <%= f.text_field :job_title, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :location, "Location (if remote, type 'Remote')" %>
-    <%= f.text_field :location, class: "form-control", placeholder: 'e.g. Vancouver, BC, CANADA' %>
+    <%= f.text_field :location, class: "form-control" %>
   </div>
 
   <div class="form-group">
     <%= f.label :start_date, "Start date (optional)" %>
     <%= f.date_field :start_date, class: "form-control" %>
+  </div>
+  
+  <div class="form-group">
+    <%= f.label :end_date, "End date (optional)" %>
+    <%= f.date_field :end_date, class: "form-control" %>
   </div>
   
   <div class="form-group">
@@ -38,7 +43,7 @@
 
    <div class="form-group">
     <%= f.label :apply_link, "Link to apply (optional)" %>
-    <%= f.text_field :apply_link, class: "form-control" %>
+    <%= f.text_field :apply_link, class: "form-control", value: 'https://www.' %>
   </div>
 
   <div class="form-group">

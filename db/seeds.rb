@@ -37,11 +37,11 @@ Category.create!(name: "Transportation, Distribution and Logistics")
 40.times do
     Post.create!(
         job_title: Faker::Job.title,
-        body: "JOIN US AND MAKE $100000000 EVERY SECOND",
+        body: "said nobody",
         user: User.first,
         company_name: Faker::Company.name,
         job_description: Faker::Lorem.paragraph,
-        job_duration: "#{rand(6)} months",
+        job_duration: "#{rand(1..8)} months",
         location: "#{Faker::Address.city}, #{Faker::Address.state}, #{Faker::Address.country}",
         category_id: rand(1..16)
     )
