@@ -1,24 +1,48 @@
-# README
+## Ruby version
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+2.7.1
 
-Things you may want to cover:
+## System dependencies
 
-* Ruby version
+## Configuration
 
-* System dependencies
+## Database creation & initialization
 
-* Configuration
+>
 
-* Database creation
+    rails db:create
 
-* Database initialization
+>
 
-* How to run the test suite
+    rails db:seed
 
-* Services (job queues, cache servers, search engines, etc.)
+## How to run the test suite
 
-* Deployment instructions
+## Services (job queues, cache servers, search engines, etc.)
 
-* ...
+## Deployment instructions
+
+## Categories
+
+- Agriculture
+- Food, and Natural Resources
+- Architecture and Construction
+- Arts, Audio/Video Technology and Communications
+- Business Management and Administration
+- Education and Training
+- Finance
+- Government and Public Administration
+- Health Science
+- Hospitality and Tourism
+- Human Services
+- Information Technology
+- Law, Public Safety, Corrections and Security
+- Manufacturing
+- Marketing, Sales and Service
+- Science, Technology, Engineering and Mathematics
+- Transportation, Distribution and Logistics
+- General Labout
+- Event
+- Landscaping & Gardening
+- Warehousing
+- Other
