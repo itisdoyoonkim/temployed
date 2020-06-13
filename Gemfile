@@ -27,6 +27,8 @@ gem 'devise', '~> 4.2'
 gem 'simple_form', '~> 5.0', '>= 5.0.2'
 gem 'hirb'
 gem 'faker'
+gem 'kaminari'
+gem 'will_paginate-bootstrap4'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

@@ -7,4 +7,5 @@ class Post < ApplicationRecord
   validates :job_title, length: { minimum: 5 }, presence: true
   validates :body, length: { minimum: 30 }, presence: true
 
+  paginates_per 25
 end

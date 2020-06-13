@@ -22,5 +22,8 @@ class PagesController < ApplicationController
  end
 
  def not_found
+  random_post_id = rand(1..Post.last.id)
+  @categories = Category.all
+  @post = Post.find(random_post_id)
  end
 end

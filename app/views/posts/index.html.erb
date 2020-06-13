@@ -1,6 +1,11 @@
 <section>
-  <% @posts.each do |post| %>
+  <div style="display: flex; justify-content: center;">
+    <%= will_paginate @posts, page_links: false, previous_label: "PREVIOUS",
+    next_label: "NEXT", renderer:
+    WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
 
+  <% @posts.each do |post| %>
   <div class="card" style="margin: 7px 0 7px 0;">
     <div class="card-body">
       <% if current_user === post.user %>
@@ -95,4 +100,10 @@
     </div>
   </div>
   <% end %>
+
+  <div style="display: flex; justify-content: center;">
+    <%= will_paginate @posts, page_links: false, previous_label: "PREVIOUS",
+    next_label: "NEXT", renderer:
+    WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
 </section>

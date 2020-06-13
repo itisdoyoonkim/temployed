@@ -1,5 +1,45 @@
-<h1>Page not found.</h1>
-<p>
-  Instead of looking for a page that doesn't exist, let's look a job that
-  actually exists.
-</p>
+<!-- <h1>Page not found.</h1>
+<section>
+  <p>
+    Instead of looking for a page that doesn't exist, let's look a job that
+    actually exists.
+  </p>
+</section>
+ -->
+<section>
+  <h6>
+    The page you are looking for does not exist. However, here's a suggestion.
+  </h6>
+  <br />
+  <div class="card">
+    <div class="card-body">
+      <div style="font-size: 0.9rem;">
+        <%= @categories.find(@post.category_id).name %>
+      </div>
+
+      <h5 class="card-title"><%= link_to @post.job_title, @post %></h5>
+      <p class="card-subtitle mb-2 text-muted">
+        <%= @post.company_name %> - <%= @post.location %>
+      </p>
+
+      <small
+        >Dates (start - end): <% if @post.start_date.present? %> <% if
+        @post.end_date.present? %> <%= @post.start_date %> - <%= @post.end_date
+        %> <% else %> <%= @post.start_date %> - not specified <% end %> <% else
+        %> not specified <% end %>
+      </small>
+
+      <p class="card-text"><%= @post.body %></p>
+
+      <% if @post.apply_link.present? %> <%= link_to "Apply",
+      "#{@post.apply_link}", :target=> "_blank", class: "btn btn-primary btn-sm"
+      %> <% else %> <%= mail_to @post.user.email, 'Apply', class: "btn
+      btn-primary btn-sm" %> <% end %>
+
+      <button class="btn btn-info btn-sm">Bookmark for later</button>
+
+      <hr />
+      <p>Updated <%= time_ago_in_words(@post.updated_at) %> ago</p>
+    </div>
+  </div>
+</section>
