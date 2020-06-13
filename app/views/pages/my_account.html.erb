@@ -6,37 +6,24 @@
 
 <div class="card">
   <div class="card-header">
-    EDUCATION
-    <%= link_to 'Add new education', new_education_path, class: "btn btn-primary btn-sm float-right" %>
-  </div>
-  <div class="card-body">
-
-    <% @educations.each do |education| %>
-
-    <div class="btn-group" role="group" aria-label="control-buttons">
-      <%= link_to 'Edit', edit_education_path(education), class: "btn btn-warning btn-sm" %>
-      <%= link_to 'Remove', education, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
-    </div>
-
-        <div><%= education.institution %>, <%= education.location %></div>
-        <div><%= education.certificate %></div>
-        
-        <div style="margin: 0 0 3% 0"><small><%= education.from %> - <%= education.to %></small></div>
-
-    <% end %>
-  </div>
-</div>
-
-<div class="card">
-  <div class="card-header">
     EXPERIENCE
-    <%= link_to 'Add new experience', new_experience_path, class: "btn btn-primary btn-sm float-right" %>
+    <%= link_to 'Add', new_experience_path, class: "btn btn-primary btn-sm float-right" %>
   </div>
   <div class="card-body">
     <% @experiences.each do |experience| %>
-        <div class="btn-group" role="group" aria-label="control-buttons">
-          <%= link_to 'Edit', edit_experience_path(experience), class: "btn btn-warning btn-sm" %>
-          <%= link_to 'Remove', experience, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+        <div class="btn-group float-right" role="group" aria-label="control-buttons">
+          <%= link_to edit_experience_path(experience), class: "btn btn-info btn-sm" do %>
+          <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg>
+          <% end %>
+
+          <%= link_to experience, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+            <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+            </svg>
+          <% end %>
         </div>
 
         <div><%= experience.organization %>, <%= experience.location %></div>
@@ -45,10 +32,44 @@
         <div style="margin: 0 0 3% 0">
           <small><%= experience.from %> - <%= experience.to %></small>
         </div>
-
+        <hr>
     <% end %>
   </div>
 </div>
+
+<div class="card">
+  <div class="card-header">
+    EDUCATION
+    <%= link_to 'Add', new_education_path, class: "btn btn-primary btn-sm float-right" %>
+  </div>
+  <div class="card-body">
+
+    <% @educations.each do |education| %>
+
+    <div class="btn-group float-right" role="group" aria-label="control-buttons">
+          <%= link_to edit_education_path(education), class: "btn btn-info btn-sm" do %>
+          <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg>
+          <% end %>
+
+          <%= link_to education, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+            <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+            </svg>
+          <% end %>
+    </div>
+
+        <div><%= education.institution %>, <%= education.location %></div>
+        <div><%= education.certificate %></div>
+        
+        <div style="margin: 0 0 3% 0"><small><%= education.from %> - <%= education.to %></small></div>
+        <hr>
+    <% end %>
+  </div>
+</div>
+
 
 <div class="card">
   <div class="card-header">
@@ -56,12 +77,43 @@
  </div>
   <div class="card-body">
     <h5>Created by me</h5>
-    <ul>
+
+  <% if @user.posts.present? %>
+  <ul class="list-group list-group-flush">
+  <li class="list-group-item">
+  Title
+  <span class="float-right">Views</span>
+  </li>
     <% @user.posts.each do |post| %>
-      <li><%= post.job_title %></li>
+      <li class="list-group-item">
+
+      <%= link_to post.job_title, post  %>
+
+          <div class="btn-group" role="group" aria-label="control-buttons">
+          <%= link_to edit_post_path(post), class: "btn btn-info btn-sm" do %>
+          <svg class="bi bi-pencil-square" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456l-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+          </svg>
+          <% end %>
+          
+          <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+            <svg class="bi bi-trash-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5a.5.5 0 0 0-1 0v7a.5.5 0 0 0 1 0v-7z"/>
+            </svg>
+          <% end %>
+          </div>
+
+      <span class="float-right"><%= post.views %></span>
+
+      </li>
     <% end%>
     </ul>
-
+  <% else %>
+    <h6>You have no posting yet.</h6>
+  <% end %>
+  <br/>
     <h5>Bookmarked by me</h5>
+
   </div>
 </div>

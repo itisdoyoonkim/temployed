@@ -1,10 +1,4 @@
 class Post < ApplicationRecord
-  # def add_https_www_to_apply_link
-  #   if !self.apply_link.include? "https://www."
-  #     self.apply_link = "https://www.#{self.apply_link}"
-  #   end
-  # end
-
   belongs_to :user
   belongs_to :category
   has_one_attached :image

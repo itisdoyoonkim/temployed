@@ -2,14 +2,47 @@
 <div class="card">
   <div class="card-header">
     <h4><%= @user.name %></h4>
-    <p><%= @user.email %></p>
+    <p>Preferred Locations: </p>
+    <p>
+      <%= mail_to @user.email, 'Send an email', class: "btn btn-primary btn-sm", :encode => "hex" %>
+    </p>
   </div>
   <div class="card-body">
     <h5 class="card-title">EXPERIENCE</h5>
         <% @user.experiences.each do |experience| %>
             <p class="card-text" style="margin-left: 9px">
+                <svg class="bi bi-building" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M15.285.089A.5.5 0 0 1 15.5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .418-.493l5.582-.93V3.5a.5.5 0 0 1 .324-.468l8-3a.5.5 0 0 1 .46.057zM7.5 3.846V8.5a.5.5 0 0 1-.418.493l-5.582.93V15h8v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.222l-7 2.624z"/>
+                  <path fill-rule="evenodd" d="M6.5 15.5v-7h1v7h-1z"/>
+                  <path d="M2.5 11h1v1h-1v-1zm2 0h1v1h-1v-1zm-2 2h1v1h-1v-1zm2 0h1v1h-1v-1zm6-10h1v1h-1V3zm2 0h1v1h-1V3zm-4 2h1v1h-1V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm-2 2h1v1h-1V7zm2 0h1v1h-1V7zm-4 0h1v1h-1V7zm0 2h1v1h-1V9zm2 0h1v1h-1V9zm2 0h1v1h-1V9zm-4 2h1v1h-1v-1zm2 0h1v1h-1v-1zm2 0h1v1h-1v-1z"/>
+                </svg>
                 <%= experience.organization %>
+
+                <br>
+
+                <svg class="bi bi-geo" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path d="M7.5 4h1v9a.5.5 0 0 1-1 0V4z"/>
+                  <path fill-rule="evenodd" d="M6.489 12.095a.5.5 0 0 1-.383.594c-.565.123-1.003.292-1.286.472-.302.192-.32.321-.32.339 0 .013.005.085.146.21.14.124.372.26.701.382.655.246 1.593.408 2.653.408s1.998-.162 2.653-.408c.329-.123.56-.258.701-.382.14-.125.146-.197.146-.21 0-.018-.018-.147-.32-.339-.283-.18-.721-.35-1.286-.472a.5.5 0 1 1 .212-.977c.63.137 1.193.34 1.61.606.4.253.784.645.784 1.182 0 .402-.219.724-.483.958-.264.235-.618.423-1.013.57-.793.298-1.855.472-3.004.472s-2.21-.174-3.004-.471c-.395-.148-.749-.336-1.013-.571-.264-.234-.483-.556-.483-.958 0-.537.384-.929.783-1.182.418-.266.98-.47 1.611-.606a.5.5 0 0 1 .595.383z"/>
+                </svg>
                 <%= experience.location %>
+
+                <br/>
+
+                <svg class="bi bi-person-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                </svg>
+                <%= experience.position %>
+                <br>
+                <small><%= experience.from %> - <%= experience.to %></small>
+            </p>
+            <p>
+              <h6>Responsibilities and/or achievements</h6>
+              <ul>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed excepturi adipisci magni maiores, deleniti saepe consectetur ullam a perferendis est?</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed excepturi adipisci magni maiores, deleniti saepe consectetur ullam a perferendis est?</li>
+                <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed excepturi adipisci magni maiores, deleniti saepe consectetur ullam a perferendis est?</li>
+              </ul>
             </p>
             <hr>
         <% end %>
@@ -17,14 +50,34 @@
   <div class="card-body">
     <h5 class="card-title">EDUCATION</h5>
         <% @user.educations.each do |education| %>
-            
             <p class="card-text" style="margin-left: 9px">
-                <%= education.institution %>, <%= education.location %>
+                <svg class="bi bi-building" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" d="M15.285.089A.5.5 0 0 1 15.5.5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5H1a.5.5 0 0 1-.5-.5v-6a.5.5 0 0 1 .418-.493l5.582-.93V3.5a.5.5 0 0 1 .324-.468l8-3a.5.5 0 0 1 .46.057zM7.5 3.846V8.5a.5.5 0 0 1-.418.493l-5.582.93V15h8v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.222l-7 2.624z"/>
+                  <path fill-rule="evenodd" d="M6.5 15.5v-7h1v7h-1z"/>
+                  <path d="M2.5 11h1v1h-1v-1zm2 0h1v1h-1v-1zm-2 2h1v1h-1v-1zm2 0h1v1h-1v-1zm6-10h1v1h-1V3zm2 0h1v1h-1V3zm-4 2h1v1h-1V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm-2 2h1v1h-1V7zm2 0h1v1h-1V7zm-4 0h1v1h-1V7zm0 2h1v1h-1V9zm2 0h1v1h-1V9zm2 0h1v1h-1V9zm-4 2h1v1h-1v-1zm2 0h1v1h-1v-1zm2 0h1v1h-1v-1z"/>
+                </svg>
+                <%= education.institution %>
+
+                <br>
+                <svg class="bi bi-geo" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M11 4a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                  <path d="M7.5 4h1v9a.5.5 0 0 1-1 0V4z"/>
+                  <path fill-rule="evenodd" d="M6.489 12.095a.5.5 0 0 1-.383.594c-.565.123-1.003.292-1.286.472-.302.192-.32.321-.32.339 0 .013.005.085.146.21.14.124.372.26.701.382.655.246 1.593.408 2.653.408s1.998-.162 2.653-.408c.329-.123.56-.258.701-.382.14-.125.146-.197.146-.21 0-.018-.018-.147-.32-.339-.283-.18-.721-.35-1.286-.472a.5.5 0 1 1 .212-.977c.63.137 1.193.34 1.61.606.4.253.784.645.784 1.182 0 .402-.219.724-.483.958-.264.235-.618.423-1.013.57-.793.298-1.855.472-3.004.472s-2.21-.174-3.004-.471c-.395-.148-.749-.336-1.013-.571-.264-.234-.483-.556-.483-.958 0-.537.384-.929.783-1.182.418-.266.98-.47 1.611-.606a.5.5 0 0 1 .595.383z"/>
+                </svg>
+                <%= education.location %>
+
+                <br>
+
+                <svg class="bi bi-award-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M8 0l1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+                  <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                </svg>
+                <%= education.certificate %>
+
+                <br>
+                <small><%= education.from %> - <%= education.to %></small>
             </p>
 
-            <p class="card-text" style="margin-left: 9px">
-                <%= education.certificate %>
-            </p>
             <hr>
         <% end %>    
   </div>
