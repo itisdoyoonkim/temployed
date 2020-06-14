@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :categories, except: [:index, :destroy, :show, :upate, :create, :new]
-  resources :experiences, except: [:index, :destroy, :show]
-  resources :educations, except: [:index, :destroy, :show]
+  resources :experiences, except: [:index, :show]
+  resources :educations, except: [:index, :show]
   resources :posts
   
   get '/my_account', to: 'pages#my_account'

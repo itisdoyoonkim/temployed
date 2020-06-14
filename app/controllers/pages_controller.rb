@@ -9,7 +9,7 @@ class PagesController < ApplicationController
 
   def my_account
     @educations = current_user.educations
-    @experiences = current_user.experiences
+    @experiences = current_user.experiences.order(to: :desc)
     @user = User.find(current_user.id)
   end
 
@@ -19,6 +19,8 @@ class PagesController < ApplicationController
 
  def single_user
   @user = User.find(params[:id])
+  @experiences = @user.experiences.sort_by &:to
+  @educations = @user.educations.sort_by &:to
  end
 
  def not_found

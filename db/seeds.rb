@@ -58,8 +58,11 @@ end
     Experience.create(
         organization: Faker::Company.name,
         location: "#{Faker::Address.city}, #{Faker::Address.state}, #{Faker::Address.country}",
-        user_id: rand(1..40)
-)
+        user_id: rand(1..40),
+        position: Faker::Job.title,
+        from: Faker::Date.between(from: 40.days.ago, to: 100.days.ago),
+        to: Faker::Date.between(from: 3.days.ago, to: 30.days.ago)
+    )
 end
 
 # CREATING EDUCATIONS
@@ -68,6 +71,8 @@ end
         institution: Faker::University.name,
         location: "#{Faker::Address.city}, #{Faker::Address.state}, #{Faker::Address.country}",
         user_id: rand(1..40),
-        certificate: Faker::Superhero.name
+        certificate: Faker::Superhero.name,
+        from: Faker::Date.between(from: 40.days.ago, to: 100.days.ago),
+        to: Faker::Date.between(from: 3.days.ago, to: 30.days.ago)
 )
 end
