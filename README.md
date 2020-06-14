@@ -25,24 +25,25 @@
 ## Categories
 
 - Agriculture
-- Food, and Natural Resources
 - Architecture and Construction
-- Arts, Audio/Video Technology and Communications
-- Business Management and Administration
-- Education and Training
-- Finance
-- Government and Public Administration
-- Health Science
-- Hospitality and Tourism
-- Human Services
-- Information Technology
-- Law, Public Safety, Corrections and Security
-- Manufacturing
-- Marketing, Sales and Service
-- Science, Technology, Engineering and Mathematics
-- Transportation, Distribution and Logistics
-- General Labout
+- Audio/Video Technology
+- Business Administration
+- Corrections and Security
+- Distribution and Logistics
+- Education
 - Event
-- Landscaping & Gardening
+- Finance
+- General Labour
+- Government
+- Hospitality and Tourism
+- Human Services and Social Work
+- Information Technology
+- Landscaping and Gardening
+- Manufacturing
+- Marketing and Sales
+- Restaurants and Bars
+- Science
+- Transportation
+- Training
 - Warehousing
 - Other

@@ -1,3 +1,4 @@
+# CREATING ADMIN
 User.create!(
     email: "admin@example.com",
     password: '123456',
@@ -16,52 +17,57 @@ User.create!(
 end
 
 # CREATING CATEGORIES
-Category.create!(name: "Agriculture, Food, and Natural Resources")
+Category.create!(name: "Agriculture")
 Category.create!(name: "Architecture and Construction")
-Category.create!(name: "Arts, Audio/Video Technology and Communications")
-Category.create!(name: "Business Management and Administration")
-Category.create!(name: "Education and Training")
+Category.create!(name: "Audio/Video Technology")
+Category.create!(name: "Business Administration")
+Category.create!(name: "Corrections and Security")
+Category.create!(name: "Distribution and Logistics")
+Category.create!(name: "Education")
+Category.create!(name: "Event")
 Category.create!(name: "Finance")
-Category.create!(name: "Government and Public Administration")
-Category.create!(name: "Health Science")
+Category.create!(name: "General Labour")
+Category.create!(name: "Government")
 Category.create!(name: "Hospitality and Tourism")
-Category.create!(name: "Human Services")
+Category.create!(name: "Human Services and Social Work")
 Category.create!(name: "Information Technology")
-Category.create!(name: "Law, Public Safety, Corrections and Security")
+Category.create!(name: "Landscaping and Gardening")
 Category.create!(name: "Manufacturing")
-Category.create!(name: "Marketing, Sales and Service")
-Category.create!(name: "Science, Technology, Engineering and Mathematics")
-Category.create!(name: "Transportation, Distribution and Logistics")
+Category.create!(name: "Marketing and Sales")
+Category.create!(name: "Restaurants and Bars")
+Category.create!(name: "Science")
+Category.create!(name: "Transportation")
+Category.create!(name: "Training")
+Category.create!(name: "Warehousing")
+Category.create!(name: "Other")
 
 # CREATING POSTS
-40.times do
+100.times do
     Post.create!(
         job_title: Faker::Job.title,
-        body: "said nobody",
-        user: User.first,
+        body: Faker::Lorem.paragraph,
+        user: User.find(rand(1..40)),
         company_name: Faker::Company.name,
-        job_description: Faker::Lorem.paragraph,
-        job_duration: "#{rand(1..8)} months",
         location: "#{Faker::Address.city}, #{Faker::Address.state}, #{Faker::Address.country}",
-        category_id: rand(1..16)
+        category_id: rand(1..23)
     )
 end
 
 # CREATING EXPERIENCES
-40.times do
+50.times do
     Experience.create(
         organization: Faker::Company.name,
         location: "#{Faker::Address.city}, #{Faker::Address.state}, #{Faker::Address.country}",
-        user_id: rand(1..41)
+        user_id: rand(1..40)
 )
 end
 
 # CREATING EDUCATIONS
-40.times do
+50.times do
     Education.create(
         institution: Faker::University.name,
         location: "#{Faker::Address.city}, #{Faker::Address.state}, #{Faker::Address.country}",
-        user_id: rand(1..41),
+        user_id: rand(1..40),
         certificate: Faker::Superhero.name
 )
 end

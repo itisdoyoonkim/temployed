@@ -29,6 +29,7 @@ gem 'hirb'
 gem 'faker'
 gem 'kaminari'
 gem 'will_paginate-bootstrap4'
+gem 'actionview-encoded_mail_to', '~> 1.0', '>= 1.0.7'
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false

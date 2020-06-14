@@ -4,7 +4,7 @@
     <h4><%= @user.name %></h4>
     <p>Preferred Locations: </p>
     <p>
-      <%= mail_to @user.email, 'Send an email', class: "btn btn-primary btn-sm", :encode => "hex" %>
+      <%= mail_to @user.email, 'Send an email', encode: "hex", class: "btn btn-primary btn-sm" %>
     </p>
   </div>
   <div class="card-body">

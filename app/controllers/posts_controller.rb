@@ -3,8 +3,14 @@ class PostsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
 
   def index
-    @posts = Post.order(created_at: :desc).page(params[:page])
     @categories = Category.all
+
+    if(params.has_key?(:category_name))
+      category_id = Category.where(name: params[:category_name])
+      @posts = Post.where(category_id: category_id).order(created_at: :desc).page(params[:page])
+    else
+      @posts = Post.order(created_at: :desc).page(params[:page])
+    end
   end
 
   def show
