@@ -7,8 +7,12 @@
     <%= f.input :organization %>
     <%= f.input :location %>
     <%= f.input :position %>
-    <%= f.input :from %>
-    <%= f.input :to %>
+
+    <%= f.label :from %>
+    <%= f.date_field :from, class: "form-control string" %>
+
+    <%= f.label :to %>
+    <%= f.date_field :to, class: "form-control string" %>
   </div>
 
   <div class="form-actions">
