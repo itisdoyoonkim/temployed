@@ -34,17 +34,6 @@
   <% @posts.each do |post| %>
   <div class="card" style="margin: 7px 0 7px 0;">
     <div class="card-body">
-      <% if current_user === post.user %>
-      <div
-        class="btn-group float-right"
-        role="group"
-        aria-label="control-buttons"
-      >
-        <%= link_to 'Edit', edit_post_path(post), class: "btn btn-info btn-sm"
-        %> <%= link_to 'Remove', post, method: :delete, data: { confirm: 'Are
-        you sure?' }, class: "btn btn-danger btn-sm" %>
-      </div>
-      <% end %>
 
       <div style="font-size: 0.9rem;">
         <%= @categories.find(post.category_id).name %>
