@@ -19,8 +19,11 @@ class PagesController < ApplicationController
 
  def single_user
   @user = User.find(params[:id])
-  @experiences = @user.experiences.sort_by &:to
-  @educations = @user.educations.sort_by &:to
+  # @experiences = @user.experiences.sort_by &:to
+  @experiences = @user.experiences.order(to: :desc)
+  # @educations = @user.educations.sort_by &:to
+  @educations = @user.educations.order(to: :desc)
+
  end
 
  def not_found
