@@ -2,7 +2,15 @@
 <div class="card">
   <div class="card-header">
     <h4><%= @user.name %></h4>
-    <p>Preferred Locations: </p>
+    <p>Preferred Locations: 
+      <% if !@user.preferred_locations.present? %>
+       Not specified
+      <% else %>
+        <% @user.preferred_locations.split(',').each do |location| %>
+          <%= location.strip.titleize %>.
+        <% end %>
+      <% end %>
+    </p>
     <p>
       <%= mail_to @user.email, 'Send an email', encode: "hex", class: "btn btn-primary btn-sm" %>
     </p>

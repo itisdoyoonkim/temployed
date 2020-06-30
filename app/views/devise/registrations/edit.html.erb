@@ -12,6 +12,13 @@ resource: resource %>
 <br />
 
 <div class="field">
+  <%= f.label :preferred_locations %><br />
+  <%= f.text_field :preferred_locations, class: "form-control string" %>
+</div>
+
+<br />
+
+<div class="field">
   <%= f.label :email %><br />
   <%= f.email_field :email, autocomplete: "email", class: "form-control string"
   %>
@@ -35,7 +42,8 @@ resource: resource %>
 <br />
 
 <div class="field">
-  <%= f.label :password_confirmation %><br />
+  <%= f.label :password_confirmation %>
+  <small>(leave blank if you don't want to change it)</small>
   <%= f.password_field :password_confirmation, autocomplete: "new-password",
   class: "form-control string" %>
 </div>
@@ -44,7 +52,7 @@ resource: resource %>
 
 <div class="field">
   <%= f.label :current_password %>
-  <small>(we need your current password to confirm your changes)</small>
+  <small>(we need your current password to update your account)</small>
 
   <br />
 
