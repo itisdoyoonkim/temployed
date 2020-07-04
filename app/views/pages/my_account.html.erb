@@ -150,7 +150,6 @@
       </li>
       <% @user.posts.each do |post| %>
       <li class="list-group-item">
-        <%= link_to post.job_title, post %>
 
         <div class="btn-group" role="group" aria-label="control-buttons">
           <%= link_to edit_post_path(post), class: "btn btn-info btn-sm" do %>
@@ -187,6 +186,8 @@
           </svg>
           <% end %>
         </div>
+        <%= link_to post.job_title, post %>
+
 
         <span class="float-right"><%= post.views %></span>
       </li>
