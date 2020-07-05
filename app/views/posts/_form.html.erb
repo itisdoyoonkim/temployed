@@ -1,25 +1,28 @@
+<div style="margin: 10px 0">
+  <small>*Required fields</small>
+</div>
+
 <% if @post.errors.any? %>
-  <div>
-    <ul>
-    <% @post.errors.full_messages.each do |msg| %>
-      <li>
-        <%= msg %>
-      </li>
-    <% end %>
-    </ul>
-  </div>
+  <p class="errors">
+  Please see the message(s) in red.</p>
 <% end %>
 
 <%= form_with(model: post, local: true) do |f| %>
   <div class="form-group">
-    <%= f.label :category %>
+    <%= f.label :category, "Category*" %>
     <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select One', class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :job_title, "Job title" %>
+    <%= f.label :job_title, "Job title*" %>
     <%= f.text_field :job_title, class: "form-control" %>
   </div>
+
+  <p class='errors'>
+  <% if !@post.errors[:job_title].blank? %>
+    Job title is either empty or too short.
+  <% end %>
+  </p>
 
   <div class="form-group">
     <%= f.label :location, "Location (if remote, type 'Remote')" %>
@@ -47,9 +50,16 @@
   </div>
 
   <div class="form-group">
-    <%= f.label :job_description %>
+    <%= f.label :job_description, "Job description*" %>
     <%= f.rich_text_area :body %>
   </div>
+
+  <p class='errors'>
+  <% if !@post.errors[:body].blank? %>
+    Job description is either empty or too short.
+  <% end %>
+  </p>
+
 
   <%= f.submit "POST IT", class: "btn btn-primary btn-sm" %>
 <% end %>

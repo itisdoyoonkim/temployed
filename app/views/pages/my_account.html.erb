@@ -128,7 +128,14 @@
     <div><%= education.certificate %></div>
 
     <div style="margin: 0 0 3% 0;">
-      <small><%= education.from %> - <%= education.to %></small>
+      <small><%= education.from %> - 
+      
+      <% if !education.current.blank? %>
+        current
+
+      <% else %>
+        <%= education.to %></small>
+      <% end %>
     </div>
     <hr />
     <% end %>

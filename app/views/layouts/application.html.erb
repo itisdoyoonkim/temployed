@@ -12,11 +12,9 @@
   </head>
 
   <body>
-        <div class="notice"><%= flash[:notice] %></div>
-
-
     <%= render 'layouts/nav' %>
     <div class="container" style="margin-top: 20px">
+      <div class="notice" style="margin: 15px 0; color: blue"><%= flash[:notice] %></div>
       <%= yield %>
     </div>
   </body>
