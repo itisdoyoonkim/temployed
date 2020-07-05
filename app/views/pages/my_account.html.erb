@@ -1,8 +1,7 @@
 <h4>Hello, <%= current_user.name %></h4>
 
 <p>
-  Preferred locations: 
-
+  Preferred location(s): 
     <% if !current_user.preferred_locations.present? %>
     Please set it via "UPDATE MY ACCOUNT" 
   <% else %> 
@@ -47,8 +46,8 @@
           d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
         />
       </svg>
-      <% end %> <%= link_to experience, method: :delete, data: { confirm: 'Are
-      you sure?' }, class: "btn btn-danger btn-sm" do %>
+      <% end %>
+      <%= link_to experience, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
       <svg
         class="bi bi-trash-fill"
         width="1em"
@@ -131,7 +130,7 @@
       <small><%= education.from %> - 
       
       <% if !education.current.blank? %>
-        current
+        CURRENT
 
       <% else %>
         <%= education.to %></small>
@@ -176,8 +175,8 @@
               d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"
             />
           </svg>
-          <% end %> <%= link_to post, method: :delete, data: { confirm: 'Are you
-          sure?' }, class: "btn btn-danger btn-sm" do %>
+          <% end %>
+          <%= link_to post, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
           <svg
             class="bi bi-trash-fill"
             width="1em"
