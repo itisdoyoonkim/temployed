@@ -10,37 +10,8 @@
   <h6>
     The page you are looking for does not exist.
   </h6>
-  <h6>Why don't we check out this job posting instead?</h6>
-  <br />
-  <div class="card">
-    <div class="card-body">
-      <div style="font-size: 0.9rem;">
-        <%= @categories.find(@post.category_id).name %>
-      </div>
 
-      <h5 class="card-title"><%= link_to @post.job_title, @post %></h5>
-      <p class="card-subtitle mb-2 text-muted">
-        <%= @post.company_name %> - <%= @post.location %>
-      </p>
+  <%= link_to 'Back to posting', posts_path, class: "btn btn-warning btn-sm", style: "margin: 10px 0" %>
 
-      <small
-        >Dates (start - end): <% if @post.start_date.present? %> <% if
-        @post.end_date.present? %> <%= @post.start_date %> - <%= @post.end_date
-        %> <% else %> <%= @post.start_date %> - not specified <% end %> <% else
-        %> not specified <% end %>
-      </small>
 
-      <p class="card-text"><%= @post.body %></p>
-
-      <% if @post.apply_link.present? %> <%= link_to "Apply",
-      "#{@post.apply_link}", :target=> "_blank", class: "btn btn-primary btn-sm"
-      %> <% else %> <%= mail_to @post.user.email, 'Apply', class: "btn
-      btn-primary btn-sm" %> <% end %>
-
-      <button class="btn btn-info btn-sm">Bookmark for later</button>
-
-      <hr />
-      <p>Updated <%= time_ago_in_words(@post.updated_at) %> ago</p>
-    </div>
-  </div>
 </section>

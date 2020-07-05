@@ -19,6 +19,11 @@ class PagesController < ApplicationController
 
  def single_user
   @user = User.find(params[:id])
+
+  if !@user.hireable
+    redirect_to not_found_path
+  end
+
   # @experiences = @user.experiences.sort_by &:to
   @experiences = @user.experiences.order(to: :desc)
   # @educations = @user.educations.sort_by &:to
@@ -27,8 +32,9 @@ class PagesController < ApplicationController
  end
 
  def not_found
-  random_post_id = rand(1..Post.last.id)
-  @categories = Category.all
-  @post = Post.find(random_post_id)
+  # random_post_id = rand(1..Post.last.id)
+  # @categories = Category.all
+  # # @post = Post.find(random_post_id)
+  # @post = Post.where("id": 103)
  end
 end
