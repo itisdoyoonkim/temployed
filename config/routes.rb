@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/all_users', to: 'pages#all_users'
   get '/user/:id', to: 'pages#single_user', :as => :user
   get '/not_found', to: 'pages#not_found'
+  get '/about', to: "pages#about"
   
   devise_for :users
   
