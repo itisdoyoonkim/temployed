@@ -1,10 +1,11 @@
 <section>
+
+  <h1 style="font-size: 1.2rem">Temporary job openings</h1>
+  
   <div class="form-group" style="width: 300px;">
-    <%= form_tag(posts_path, method: :get) do %> <%= label_tag(:category_name,
-    "Filter by category") %> <%= select_tag "category_name",
-    options_from_collection_for_select(@categories, "name", "name",
-    params[:category_name]) %> <%= button_tag(type: "submit", class: "btn
-    btn-light") do %>
+    <%= form_tag(posts_path, method: :get) do %> 
+    <%= select_tag "category_name", options_from_collection_for_select(@categories, "name", "name", params[:category_name]) %>
+    <%= button_tag(type: "submit", class: "btn btn-light") do %>
     <svg
       class="bi bi-search"
       width="1em"
@@ -22,7 +23,8 @@
         d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"
       />
     </svg>
-    <% end %> <% end %>
+    <% end %>
+    <% end %>
   </div>
 
   <div style="display: flex; justify-content: center;">
