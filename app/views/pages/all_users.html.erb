@@ -1,5 +1,6 @@
 <section>
-  <% @users.each do |user| %> <% if !user.admin? %>
+  <% @users.each do |user| %> 
+    <% if !user.admin? && !user.hireable %>
   <div class="card" style="margin: 7px 0 7px 0;">
     <div class="card-body">
       <h5 class="card-title">
@@ -33,5 +34,6 @@
     </div>
   </div>
 
-  <% end %> <% end %>
+  <% end %>
+<% end %>
 </section>

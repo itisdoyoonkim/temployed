@@ -3,7 +3,7 @@
 <p>
   Preferred location(s): 
     <% if !current_user.preferred_locations.present? %>
-    Please set it via "UPDATE MY ACCOUNT" 
+    Please click "UPDATE MY ACCOUNT"
   <% else %> 
     <% current_user.preferred_locations.split(',').each do |location| %> 
       <%= location.strip.titleize %>. 

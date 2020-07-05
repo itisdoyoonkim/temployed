@@ -1,7 +1,3 @@
-<div style="margin: 10px 0">
-  <small>*Required fields</small>
-</div>
-
 <% if @post.errors.any? %>
   <p class="errors">
   Please see the message(s) in red.</p>
@@ -9,12 +5,12 @@
 
 <%= form_with(model: post, local: true) do |f| %>
   <div class="form-group">
-    <%= f.label :category, "Category*" %>
+    <%= f.label :category, "Category (required)" %>
     <%= f.collection_select :category_id, Category.all, :id, :name, :prompt => 'Select One', class: "form-control" %>
   </div>
 
   <div class="form-group">
-    <%= f.label :job_title, "Job title*" %>
+    <%= f.label :job_title, "Job title (required)" %>
     <%= f.text_field :job_title, class: "form-control" %>
   </div>
 
@@ -25,7 +21,7 @@
   </p>
 
   <div class="form-group">
-    <%= f.label :location, "Location (if remote, type 'Remote')" %>
+    <%= f.label :location, "Location (if remote, type 'Remote') (optional)" %>
     <%= f.text_field :location, class: "form-control" %>
   </div>
 
@@ -40,17 +36,17 @@
   </div>
   
   <div class="form-group">
-    <%= f.label :company_name, "Company name (optional)" %>
+    <%= f.label :company_name, "Company/Organization name (optional)" %>
     <%= f.text_field :company_name, class: "form-control" %>
   </div>
 
    <div class="form-group">
-    <%= f.label :apply_link, "Link to apply (optional)" %>
+    <%= f.label :apply_link, "Link to apply (your email address will be used by default) (optional)" %>
     <%= f.text_field :apply_link, class: "form-control", value: 'https://www.' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :job_description, "Job description*" %>
+    <%= f.label :job_description, "Job description (required)" %>
     <%= f.rich_text_area :body %>
   </div>
 

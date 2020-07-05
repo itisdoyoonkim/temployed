@@ -12,8 +12,15 @@
 
 <br />
 
+<%= f.check_box :hireable %>
+<%= f.label :hireable, "I am not looking for work at the moment" %><br />
+
+<br />
+
 <div class="field">
-  <%= f.label :preferred_locations %><br />
+  <%= f.label :preferred_locations %>
+  <small>(Please seperate with commas.)</small>
+  <br />
   <%= f.text_field :preferred_locations, class: "form-control string" %>
 </div>
 
@@ -33,9 +40,10 @@
 
 <div class="field">
   <%= f.label :password %>
-  <small>(leave blank if you don't want to change it)</small>
-  <%= f.password_field :password, autocomplete: "new-password", class: "form-control string" %> <% if @minimum_password_length %>
-  <small>Minimum of <%= @minimum_password_length %> characters.</small>
+  <small>(Leave blank if you don't want to change it.)</small>
+  <%= f.password_field :password, autocomplete: "new-password", class: "form-control string" %>
+  <% if @minimum_password_length %>
+    <small>Minimum of <%= @minimum_password_length %> characters.</small>
   <% end %>
 </div>
 
@@ -43,7 +51,7 @@
 
 <div class="field">
   <%= f.label :password_confirmation %>
-  <small>(leave blank if you don't want to change it)</small>
+  <small>(Leave blank if you don't want to change it.)</small>
   <%= f.password_field :password_confirmation, autocomplete: "new-password",
   class: "form-control string" %>
 </div>
@@ -52,7 +60,7 @@
 
 <div class="field">
   <%= f.label :current_password %>
-  <small>(we need your current password to update your account)</small>
+  <small>(We need your current password to update your account.)</small>
 
   <br />
 
