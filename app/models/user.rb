@@ -7,4 +7,7 @@ class User < ApplicationRecord
   has_many :posts
   has_many :educations
   has_many :experiences
+
+  validates :headline, length: {maximum: 160}
+
 end

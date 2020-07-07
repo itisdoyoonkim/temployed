@@ -12,8 +12,18 @@
 
 <br />
 
-<%= f.check_box :hireable %>
-<%= f.label :hireable, "I am actively looking for a temporary work." %><br />
+<div class="field">
+  <%= f.check_box :hireable %>
+  <%= f.label :hireable, "I am actively looking for a temporary work." %><br />
+</div>
+
+<br />
+
+<div class="field">
+  <%= f.label :headline %><small> (A very short summary of who you are.)</small>
+  <br />
+  <%= f.text_field :headline, class: "form-control string" %>
+</div>
 
 <br />
 
