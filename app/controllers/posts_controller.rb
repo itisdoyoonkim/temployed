@@ -24,6 +24,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    redirect_to root_path, notice: "You are not allowed to perform the action." unless current_user == @post.user
   end
 
   def create
@@ -50,6 +51,8 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    redirect_to root_path, notice: "You are not allowed to perform the action." unless current_user == @post.user
+
     @post.destroy
     respond_to do |format|
       format.html { redirect_to my_account_path, notice: 'Post was successfully destroyed.' }
@@ -60,6 +63,10 @@ class PostsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find(params[:id])
+      
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path, notice: "The post does not exist anymore."
+        
     end
 
     # Only allow a list of trusted parameters through.
